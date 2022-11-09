@@ -1,0 +1,18 @@
+.header--title {
+  font-size: 2.25rem;
+  background: linear-gradient(90.41deg, #261f8d 1.14%, #4218da 100%);
+}
+
+.form--button {
+  grid-column: 1 / -1;
+  font-family: "Karla", sans-serif;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.meme-image {
+  max-width: 100%;
+}
