@@ -1,22 +1,34 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "./Main.css";
-import MemesData from "../helper/MemesData";
 
 function Meme() {
-  const [img, setImg] = useState("");
   // Create memeImg state
+  const [memes, setMemes] = useState('');
+  const [count, setCount] = useState(0)
   const [text, setText] = useState({
     topText: "",
     bottomText: "",
   });
+  console.log(memes)
 
   // When the function is called
   // Update the memesImg state with a random number
-  function getClicked() {
-    const memesArray = MemesData.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
-    setImg(url);
+  // function getClicked() {
+  //   const memesArray = MemesData.data.memes;
+  //   const randomNumber = Math.floor(Math.random() * memesArray.length);
+  //   const url = memesArray[randomNumber].url;
+  //   setImg(url)
+  //   console.log(url)
+  // }
+
+  useEffect(() => {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then((res) => res.json())
+      .then((data) => setMemes(data.data.memes[count].url))
+  }, [count])
+
+  const getMemes = () => {
+    setCount((prevState) => prevState + 1)
   }
 
   const textChange = (e) => {
@@ -50,12 +62,12 @@ function Meme() {
         />
       </form>
       <br />
-      <button onClick={getClicked} className="form--button">
+      <button onClick={getMemes} className="form--button">
         Get a new meme image
       </button>
       <br />
       <div className='meme'>
-        {img && <img src={img} className="meme-image" alt="img" />}
+        {memes && <img src={memes} className="meme-image" alt="img" />}
         <h6 className='memeText top'>{text.topText}</h6>
         <h6 className='memeText bottom'>{text.bottomText}</h6>
       </div>
