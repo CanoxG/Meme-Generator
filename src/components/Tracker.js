@@ -11,6 +11,7 @@ const Tracker = () => {
     window.addEventListener("resize", watchWidth);
     return function () {
       console.log("Clean up...");
+      // RemoveEventListener stop to memory leak
       window.removeEventListener("resize", watchWidth);
     };
   }, []);
