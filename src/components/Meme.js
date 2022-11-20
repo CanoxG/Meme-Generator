@@ -9,6 +9,7 @@ function Meme() {
     topText: "",
     bottomText: "",
   });
+
   console.log(memes)
 
   // When the function is called
