@@ -6,16 +6,11 @@
 .form--button {
   grid-column: 1 / -1;
   font-family: "Karla", sans-serif;
-  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
-  border-radius: 5px;
-  padding: 10px;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 
 .meme-image {
   max-width: 100%;
+  max-height: 800px;
 }
 
 .formInput {
@@ -41,16 +36,9 @@
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
-  text-shadow:
-          2px 2px 0 #000,
-          -2px -2px 0 #000,
-          2px -2px 0 #000,
-          -2px 2px 0 #000,
-          0 2px 0 #000,
-          2px 0 0 #000,
-          0 -2px 0 #000,
-          -2px 0 0 #000,
-          2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
 }
 
 .top {
