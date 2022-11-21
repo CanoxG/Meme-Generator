@@ -3,13 +3,12 @@ import "./App.css";
 import Main from "./components/Main";
 import Meme from "./components/Meme";
 import Api from "./components/Api";
-import Tracker from "./components/Tracker";
 
 function App() {
   const [show, setShow] = useState(true);
 
   function toggle() {
-    setShow((prev) => !prev)
+    setShow((prev) => !prev);
   }
 
   return (
@@ -22,9 +21,6 @@ function App() {
         </div>
         <div className="App">
           <Api />
-        </div>
-        <div className="App">
-          {show && <Tracker />}
         </div>
       </div>
     </>
