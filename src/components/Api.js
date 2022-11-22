@@ -15,7 +15,7 @@ function Api() {
 
   return (
     <>
-      <h3>The count is {count}</h3>
+      <h2>The Character is {count}</h2>
       <button onClick={() => setCount((prev) => prev + 1)}>
         Get Next Character
       </button>
